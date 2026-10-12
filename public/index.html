@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>奶龙 Nai Long · 一只治愈的小恐龙</title>
+  <meta name="description" content="奶龙 Nai Long 主题小站 —— 可爱、元气、治愈的小恐龙粉丝页面。" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <!-- ============ HERO ============ -->
+  <header class="hero" id="top">
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+    <div class="sun"></div>
+
+    <div class="hero-inner">
+      <p class="kicker">✦ 治愈系小恐龙 ✦</p>
+      <h1 class="title">奶龙 <span class="title-en">Nai Long</span></h1>
+      <p class="tagline">圆滚滚、黄澄澄，每天都元气满满的快乐小恐龙！</p>
+
+      <div class="dragon-stage">
+        <div class="speech-bubble" id="bubble" aria-live="polite">快来摸摸我呀～</div>
+        <div class="dragon" id="dragon" role="img" aria-label="奶龙卡通形象" title="点我摸摸">
+          <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
+            <!-- tail -->
+            <path d="M296 302 Q362 296 368 238 Q370 220 356 224 Q350 227 353 244 Q350 272 306 284 Z" fill="#FFD93D"/>
+            <path d="M366 236 Q382 228 384 210 Q370 216 360 228 Z" fill="#FF8C42"/>
+            <!-- wings -->
+            <path d="M128 252 Q84 226 92 190 Q114 206 130 234 Z" fill="#FFE29A"/>
+            <path d="M292 252 Q336 226 328 190 Q306 206 290 234 Z" fill="#FFE29A"/>
+            <!-- back spikes -->
+            <path d="M146 216 L156 176 L174 210 Z" fill="#FF8C42"/>
+            <path d="M210 206 L220 164 L238 204 Z" fill="#FF8C42"/>
+            <path d="M274 216 L284 176 L302 210 Z" fill="#FF8C42"/>
+            <!-- body -->
+            <ellipse cx="210" cy="292" rx="96" ry="86" fill="#FFD93D"/>
+            <!-- belly -->
+            <ellipse cx="210" cy="314" rx="56" ry="50" fill="#FFF3D6"/>
+            <!-- legs -->
+            <ellipse cx="158" cy="362" rx="28" ry="20" fill="#FFD93D"/>
+            <ellipse cx="262" cy="362" rx="28" ry="20" fill="#FFD93D"/>
+            <!-- arms -->
+            <ellipse cx="122" cy="292" rx="15" ry="26" fill="#FFD93D" transform="rotate(18 122 292)"/>
+            <ellipse cx="298" cy="292" rx="15" ry="26" fill="#FFD93D" transform="rotate(-18 298 292)"/>
+            <!-- head -->
+            <circle cx="210" cy="148" r="90" fill="#FFD93D"/>
+            <!-- horns -->
+            <path d="M158 80 Q146 44 164 38 Q176 54 180 76 Z" fill="#FF9A3D"/>
+            <path d="M262 80 Q274 44 256 38 Q244 54 240 76 Z" fill="#FF9A3D"/>
+            <!-- eyes -->
+            <circle cx="170" cy="134" r="21" fill="#FFFFFF"/>
+            <circle cx="250" cy="134" r="21" fill="#FFFFFF"/>
+            <circle cx="173" cy="137" r="10.5" fill="#3A2E2A"/>
+            <circle cx="247" cy="137" r="10.5" fill="#3A2E2A"/>
+            <circle cx="177" cy="132" r="3.6" fill="#FFFFFF"/>
+            <circle cx="243" cy="132" r="3.6" fill="#FFFFFF"/>
+            <!-- blush -->
+            <ellipse cx="142" cy="172" rx="13" ry="7.5" fill="#FFB3C1" opacity="0.85"/>
+            <ellipse cx="278" cy="172" rx="13" ry="7.5" fill="#FFB3C1" opacity="0.85"/>
+            <!-- snout -->
+            <ellipse cx="210" cy="182" rx="43" ry="30" fill="#FFE9A8"/>
+            <ellipse cx="195" cy="173" rx="4.2" ry="5.2" fill="#E8A33D"/>
+            <ellipse cx="225" cy="173" rx="4.2" ry="5.2" fill="#E8A33D"/>
+            <path d="M190 190 Q210 205 230 190" stroke="#8A5A2B" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <p class="pet-count-line">你摸了奶龙 <span id="pet-count">0</span> 次 💛</p>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#about">认识奶龙</a>
+        <a class="btn btn-ghost" href="#facts">趣味小知识</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>可爱</span><i>✦</i><span>元气</span><i>✦</i><span>治愈</span><i>✦</i><span>呆萌</span><i>✦</i><span>奶龙</span><i>✦</i><span>NAI LONG</span><i>✦</i>
+      <span>可爱</span><i>✦</i><span>元气</span><i>✦</i><span>治愈</span><i>✦</i><span>呆萌</span><i>✦</i><span>奶龙</span><i>✦</i><span>NAI LONG</span><i>✦</i>
+    </div>
+  </div>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <h2 class="section-title">认识奶龙</h2>
+    <p class="section-sub">About Nai Long</p>
+    <div class="about-grid">
+      <div class="about-card">
+        <p>奶龙是一只风靡网络的卡通小恐龙：<strong>大大的脑袋、圆滚滚的身材、一对小角和亮闪闪的大眼睛</strong>，笑起来特别治愈。</p>
+        <p>它最爱喝奶、最爱撒娇，走起路来一颠一颠的。无论心情如何，看到它都会忍不住笑出来。</p>
+      </div>
+      <div class="about-card">
+        <h3>名字由来</h3>
+        <p>「奶」是甜甜暖暖的奶香味，「龙」是中国人心中的吉祥图腾——一只喝奶长大、无忧无虑的小龙，就叫<strong>奶龙</strong>。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section class="section section-alt" id="features">
+    <h2 class="section-title">奶龙的特点</h2>
+    <p class="section-sub">What makes Nai Long special</p>
+    <div class="feature-grid">
+      <div class="feature-card"><span class="feature-emoji">🐉</span><h3>圆滚滚</h3><p>胖嘟嘟的身板，摸摸超治愈</p></div>
+      <div class="feature-card"><span class="feature-emoji">☀️</span><h3>元气满满</h3><p>每天都有满满的活力</p></div>
+      <div class="feature-card"><span class="feature-emoji">🥛</span><h3>爱喝奶</h3><p>奶是快乐的源泉</p></div>
+      <div class="feature-card"><span class="feature-emoji">😄</span><h3>呆萌治愈</h3><p>一笑解千愁</p></div>
+    </div>
+  </section>
+
+  <!-- ============ FACTS ============ -->
+  <section class="section" id="facts">
+    <h2 class="section-title">趣味小知识</h2>
+    <p class="section-sub">Fun facts</p>
+    <ul class="fact-list">
+      <li>🎨 奶龙的身体是明快的黄色，象征阳光和好心情。</li>
+      <li>🌀 它高兴的时候会原地转圈圈。</li>
+      <li>🦷 笑起来会露出两颗小虎牙。</li>
+      <li>🧡 最喜欢被摸头，摸头会开心得跳起来。</li>
+      <li>✨ 梦想是飞向天上的云朵上面去。</li>
+    </ul>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <p class="footer-dragon">🐉</p>
+    <p>© 2026 奶龙小站 · Made with 💛</p>
+    <p class="footer-note">非官方粉丝页面，仅供娱乐</p>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

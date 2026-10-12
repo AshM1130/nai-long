@@ -1,0 +1,5 @@
+name = "nai-long"
+compatibility_date = "2026-10-12"
+
+# Serve the static site directly from Cloudflare Workers
+assets = { directory = "./public" }

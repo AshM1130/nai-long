@@ -1,0 +1,339 @@
+:root {
+  --yellow: #ffd93d;
+  --yellow-deep: #ffc93c;
+  --orange: #ff8c42;
+  --cream: #fff6dc;
+  --ink: #4a3b2a;
+  --sky-1: #8ed6f2;
+  --sky-2: #cdeffb;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Baloo 2", "ZCOOL KuaiLe", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", ui-rounded, system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+  overflow-x: hidden;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(180deg, var(--sky-1) 0%, var(--sky-2) 70%, var(--cream) 100%);
+  padding: 4rem 1.25rem 3rem;
+  overflow: hidden;
+}
+
+.sun {
+  position: absolute;
+  top: 8%;
+  right: 10%;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fff7c9, #ffd93d 70%);
+  box-shadow: 0 0 60px 20px rgba(255, 217, 61, 0.55);
+  animation: sunPulse 4s ease-in-out infinite;
+}
+
+@keyframes sunPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+.cloud {
+  position: absolute;
+  background: #ffffff;
+  border-radius: 999px;
+  opacity: 0.9;
+  animation: drift linear infinite;
+}
+.cloud::before, .cloud::after {
+  content: "";
+  position: absolute;
+  background: #ffffff;
+  border-radius: 50%;
+}
+.cloud-1 { top: 14%; left: -160px; width: 150px; height: 46px; animation-duration: 55s; }
+.cloud-1::before { width: 60px; height: 60px; top: -30px; left: 24px; }
+.cloud-1::after { width: 42px; height: 42px; top: -18px; left: 70px; }
+.cloud-2 { top: 26%; left: -220px; width: 190px; height: 54px; animation-duration: 75s; animation-delay: -30s; }
+.cloud-2::before { width: 76px; height: 76px; top: -38px; left: 32px; }
+.cloud-2::after { width: 52px; height: 52px; top: -22px; left: 92px; }
+.cloud-3 { top: 7%; left: -260px; width: 120px; height: 38px; animation-duration: 65s; animation-delay: -12s; }
+.cloud-3::before { width: 50px; height: 50px; top: -25px; left: 20px; }
+.cloud-3::after { width: 34px; height: 34px; top: -14px; left: 56px; }
+
+@keyframes drift {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(100vw + 320px)); }
+}
+
+.hero-inner { position: relative; z-index: 2; max-width: 720px; }
+
+.kicker {
+  display: inline-block;
+  font-size: 0.95rem;
+  letter-spacing: 0.35em;
+  color: #ffffff;
+  background: rgba(255, 140, 66, 0.9);
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1.1rem;
+}
+
+.title {
+  font-family: "ZCOOL KuaiLe", "Baloo 2", "PingFang SC", sans-serif;
+  font-size: clamp(3rem, 10vw, 5.5rem);
+  line-height: 1.1;
+  color: var(--ink);
+  text-shadow: 0 4px 0 rgba(255, 255, 255, 0.6);
+}
+.title-en {
+  display: block;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.2rem, 3.5vw, 2rem);
+  letter-spacing: 0.25em;
+  color: var(--orange);
+  margin-top: 0.4rem;
+  text-transform: uppercase;
+}
+
+.tagline {
+  margin-top: 1rem;
+  font-size: clamp(1rem, 2.6vw, 1.25rem);
+  color: #6b5a41;
+}
+
+/* ---------- DRAGON STAGE ---------- */
+.dragon-stage {
+  position: relative;
+  margin: 1.5rem auto 0.5rem;
+  width: min(340px, 72vw);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.dragon svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 14px 18px rgba(74, 59, 42, 0.22));
+  animation: floaty 3.4s ease-in-out infinite;
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.dragon.bounce svg { animation: bounce 0.55s cubic-bezier(0.28, 0.84, 0.42, 1); }
+
+@keyframes bounce {
+  0% { transform: translateY(0) scale(1); }
+  35% { transform: translateY(-26px) scale(1.04, 0.96); }
+  60% { transform: translateY(0) scale(0.96, 1.05); }
+  80% { transform: translateY(-8px) scale(1.01, 0.99); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+.speech-bubble {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  color: var(--ink);
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1.1rem;
+  border: 3px solid var(--yellow-deep);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+  z-index: 3;
+}
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-top-color: var(--yellow-deep);
+}
+.speech-bubble.show { opacity: 1; }
+
+.pet-count-line {
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+  color: #8a744f;
+}
+#pet-count { font-weight: 700; color: var(--orange); }
+
+.hero-actions {
+  margin-top: 1.8rem;
+  display: flex;
+  gap: 0.9rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 0.75rem 1.8rem;
+  border-radius: 999px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background: var(--orange);
+  color: #fff;
+  box-shadow: 0 6px 0 #d96f2a;
+}
+.btn-primary:hover { box-shadow: 0 8px 0 #d96f2a; }
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--ink);
+  border: 2px solid var(--yellow-deep);
+}
+
+/* ---------- MARQUEE ---------- */
+.marquee {
+  background: var(--yellow);
+  border-block: 3px solid var(--yellow-deep);
+  overflow: hidden;
+  padding: 0.55rem 0;
+}
+.marquee-track {
+  display: flex;
+  gap: 1.4rem;
+  width: max-content;
+  animation: marquee 18s linear infinite;
+  font-family: "ZCOOL KuaiLe", "Baloo 2", sans-serif;
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+.marquee-track i { font-style: normal; color: var(--orange); }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ---------- SECTIONS ---------- */
+.section {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 4.5rem 1.25rem;
+  text-align: center;
+}
+.section-alt {
+  background: #fff9e8;
+  border-block: 3px dashed #f3d9a4;
+  max-width: none;
+}
+.section-alt > * { max-width: 860px; margin-inline: auto; }
+
+.section-title {
+  font-family: "ZCOOL KuaiLe", "Baloo 2", "PingFang SC", sans-serif;
+  font-size: clamp(1.9rem, 5vw, 2.6rem);
+  color: var(--ink);
+}
+.section-sub {
+  color: var(--orange);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+  margin-bottom: 2.2rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.4rem;
+  text-align: left;
+}
+.about-card {
+  background: #ffffff;
+  border-radius: 1.4rem;
+  padding: 1.6rem;
+  border: 3px solid #ffe9a8;
+  box-shadow: 0 10px 24px rgba(74, 59, 42, 0.08);
+  line-height: 1.8;
+}
+.about-card h3 {
+  font-family: "ZCOOL KuaiLe", sans-serif;
+  color: var(--orange);
+  margin-bottom: 0.5rem;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.2rem;
+}
+.feature-card {
+  background: #ffffff;
+  border-radius: 1.4rem;
+  padding: 1.6rem 1rem;
+  border: 3px solid #ffe9a8;
+  box-shadow: 0 10px 24px rgba(74, 59, 42, 0.08);
+  transition: transform 0.2s ease;
+}
+.feature-card:hover { transform: translateY(-6px) rotate(-1deg); }
+.feature-emoji { font-size: 2.4rem; display: block; margin-bottom: 0.5rem; }
+.feature-card h3 {
+  font-family: "ZCOOL KuaiLe", sans-serif;
+  margin-bottom: 0.35rem;
+}
+.feature-card p { color: #6b5a41; font-size: 0.95rem; }
+
+.fact-list {
+  list-style: none;
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: left;
+  display: grid;
+  gap: 0.9rem;
+}
+.fact-list li {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1rem 1.2rem;
+  border: 2px solid #ffe9a8;
+  line-height: 1.7;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  text-align: center;
+  padding: 3rem 1.25rem 2.5rem;
+  background: var(--ink);
+  color: #f5e9d0;
+}
+.footer-dragon { font-size: 2.2rem; }
+.footer p { margin-top: 0.5rem; }
+.footer-note { font-size: 0.85rem; opacity: 0.7; }
+
+@media (max-width: 480px) {
+  .hero { min-height: auto; padding-top: 3rem; }
+  .speech-bubble { font-size: 0.9rem; }
+}
